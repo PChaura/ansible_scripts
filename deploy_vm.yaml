@@ -1,0 +1,41 @@
+- name: play to create a virtual machine
+  hosts: localhost
+  gather_facts: no
+  vars_files:
+      - /home/a249695/ansible/host_vars/localhost.yml
+  tasks:
+   - name: Create a virtual machine on Vcenter
+     vmware_guest:
+       hostname: "{{ vcenter }}"
+       username: "{{ vcenteruser }}"
+       password: "{{ vcenterpassword }}"
+       datacenter: "{{ datacenter }}"
+       folder: Sparrow_Test
+       validate_certs: no
+       name: sparrow_demo
+       template: "{{ }}"
+       datastore: 
+       state: poweredon
+      # esxi_hostname: "{{  }}"
+       cluster: ""
+       hardware:
+        memory_mb: 12000
+        num_cpus: 15
+       networks:
+         - name: UAT
+           ip: 0.0.0.0
+           netmask: 255.255.255.0
+           gateway: 0.0.0.0
+           start_connected: true
+           type: static
+       customization:
+         dns_servers:
+         - 0.0.0.0
+         - 0.0.0.0
+         timezone: Africa/Blantyre
+         domain: ""
+     register: deploy_vm1
+
+   - name: show results vm1
+     debug:
+             var: deploy_vm1
