@@ -10,7 +10,7 @@
        username: "{{ vcenteruser }}"
        password: "{{ vcenterpassword }}"
        datacenter: "{{ datacenter }}"
-       folder: Sparrow_Test
+       folder: Sparrow_Test #hello
        validate_certs: no
        name: sparrow_demo
        template: "{{ }}"
