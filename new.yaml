@@ -1,18 +1,8 @@
 - name: play to create a virtual machine
   hosts: localhost
   gather_facts: no
-  vars_files:
-      - /home/a249695/ansible/host_vars/localhost.yml
   tasks:
-   - name: Create a virtual machine on Vcenter
-     vmware_guest:
-       hostname: "{{ vcenter }}"
-       username: "{{ vcenteruser }}"
-       password: "{{ vcenterpassword }}"
-       datacenter: "{{ datacenter }}"
-       folder: Sparrow_Test #hello
-       validate_certs: no
-       name: sparrow_demo
-       template: "{{ }}"
-       datastore: 
-       state: poweredon
+    - name: Run command if /path/to/database does not exist (with 'cmd' parameter)
+      command:
+        cmd: cat /etc/passwd
+        
