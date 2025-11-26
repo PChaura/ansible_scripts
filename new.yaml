@@ -3,6 +3,6 @@
   gather_facts: no
   tasks:
     - name: Run command if /path/to/database does not exist (with 'cmd' parameter)
-      command:
-        cmd: cat /etc/passwd
+      command: lsblk
+        
         
