@@ -6,5 +6,5 @@
       command: lsblk
     - name: Install chronyd
       dnf:
-        name: chronyd
+        name: chrony
         state: latest
