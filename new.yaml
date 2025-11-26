@@ -4,5 +4,7 @@
   tasks:
     - name: run playbook to check disk
       command: lsblk
-        
-        
+    - name: Install chronyd
+      yum:
+        name: chronyd
+        state: latest
