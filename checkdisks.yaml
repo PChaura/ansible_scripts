@@ -1,7 +1,0 @@
-- name: play to see disk size
-  gather_facts: no
-  tasks:
-    - name: run this command
-      command:
-        args: lsblk
-         
