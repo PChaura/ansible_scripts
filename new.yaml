@@ -6,5 +6,7 @@
       command: lsblk
     - name: Install chronyd
       yum:
-        name: chronyd
+        name:
+          - python3-dnf
+          - chronyd
         state: latest
