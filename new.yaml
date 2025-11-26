@@ -5,8 +5,6 @@
     - name: run playbook to check disk
       command: lsblk
     - name: Install chronyd
-      yum:
-        name:
-          - python3-dnf
-          - chronyd
+      dnf:
+        name: chronyd
         state: latest
