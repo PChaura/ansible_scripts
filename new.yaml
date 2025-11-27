@@ -1,4 +1,5 @@
 - name: simple playbook
+  hosts: all
   gather_facts: true
   tasks:
     - name: run playbook to check disk
