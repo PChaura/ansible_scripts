@@ -1,0 +1,8 @@
+- name: simple playbook
+  hosts: all
+  gather_facts: true
+  tasks:
+    - name: restart services
+      service:
+        name: chronyd
+        state: restarted
