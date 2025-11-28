@@ -9,7 +9,7 @@
     - name: Copy file with owner and permissions
       copy:
         src: /etc/passwd
-        dest: /etc/passwd.bak
+        dest: /home/patrice/passwd.bak
         owner: patrice
         group: patrice
         mode: '0644'
